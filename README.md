@@ -4,9 +4,9 @@ Aplicação do Challenge FIAP que propõe incentivar o transporte público com p
 
 ## Identidade visual
 
-![Logo UrbanLink](public/assets/logosUrbanLink/logo_UrbanLink.svg)
+<img src="public/assets/logosUrbanLink/logo_UrbanLink.svg" width="160" alt="Logo UrbanLink">
 
-![Mobilidade e recompensas](public/assets/banners/recompensas-banner.svg)
+<img src="public/assets/banners/recompensas-banner.svg" width="420" alt="Mobilidade e recompensas">
 
 <img src="public/assets/icons/bus-front-fill.svg" width="32" alt="Transporte público"> <img src="public/assets/icons/leaf.svg" width="32" alt="Sustentabilidade">
 
