@@ -63,6 +63,7 @@ function Detalhe({ codigo }: { codigo: string }) {
               </Button>
             </div>
           )}
+          {enviando && <p className="mt-4" role="status">Processando alteração…</p>}
           {retorno && <p className="mt-4 font-bold" role="status">{retorno}</p>}
         </div>
       )}
