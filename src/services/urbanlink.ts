@@ -1,4 +1,4 @@
-import type { Transporte } from '../types/mobilidade'
+import type { Usuario, Transporte } from '../types/mobilidade'
 
 const urlApi = (import.meta.env.VITE_API_URL?.trim() || 'https://urbanlink-sboot.onrender.com').replace(/\/+$/, '')
 
@@ -21,4 +21,8 @@ export function listarTransportes(signal: AbortSignal) {
 
 export function buscarTransporte(id: string, signal: AbortSignal) {
   return consultarApi<Transporte>('/transportes/' + encodeURIComponent(id), { signal })
+}
+
+export function listarUsuarios(signal: AbortSignal) {
+  return consultarApi<Usuario[]>('/usuarios', { signal })
 }
