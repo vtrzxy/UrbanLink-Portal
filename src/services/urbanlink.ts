@@ -1,4 +1,4 @@
-import type { Usuario, Transporte } from '../types/mobilidade'
+import type { ConversaoVoucher, Voucher, Usuario, Transporte } from '../types/mobilidade'
 
 const urlApi = (import.meta.env.VITE_API_URL?.trim() || 'https://urbanlink-sboot.onrender.com').replace(/\/+$/, '')
 
@@ -25,4 +25,12 @@ export function buscarTransporte(id: string, signal: AbortSignal) {
 
 export function listarUsuarios(signal: AbortSignal) {
   return consultarApi<Usuario[]>('/usuarios', { signal })
+}
+
+export function emitirVoucher(conversao: ConversaoVoucher) {
+  return consultarApi<Voucher>('/vouchers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(conversao),
+  })
 }
