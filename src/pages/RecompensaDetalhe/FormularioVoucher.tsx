@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
+import { Link } from 'react-router'
 import Button from '../../components/Button'
 import { emitirVoucher, listarUsuarios } from '../../services/urbanlink'
 import type { Transporte, Usuario, Voucher } from '../../types/mobilidade'
@@ -55,6 +56,9 @@ export default function FormularioVoucher({ transporte }: { transporte: Transpor
         <p role="status" className="font-bold">Voucher {voucher.codigo} emitido.</p>
         <p>Crédito de {voucher.valorCredito.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
         <p>Pontos usados {voucher.pontosUsados.toLocaleString('pt-BR')}</p>
+        <Link className="mt-3 inline-block font-bold underline" to={'/vouchers?usuario=' + encodeURIComponent(usuarioId)}>
+          Consultar meus vouchers
+        </Link>
       </div>
     )
   }
