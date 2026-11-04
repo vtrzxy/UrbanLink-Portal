@@ -7,62 +7,28 @@ import type { ItemCarousel } from '../../components/TabCarousel'
 
 const etapas: ItemCarousel[] = [
   {
-    titulo: 'Use transporte público',
-    tabLabel: 'Trajeto',
-    descricao:
-      'O usuário inicia sua jornada usando ônibus, metrô ou trem e registra o trajeto dentro da plataforma UrbanLink.',
+    titulo: 'Escolha um transporte',
+    tabLabel: 'Catálogo',
+    descricao: 'Confira a tarifa e veja quais transportes integrados aceitam vouchers.',
     icone: '/assets/icons/bus-front-fill.svg',
     cor: 'blue',
-    links: [
-      { label: 'Entender jornada', to: '/sobre' },
-      { label: 'Ver dúvidas', to: '/faq' },
-    ],
+    links: [{ label: 'Abrir catálogo', to: '/recompensas' }],
   },
   {
-    titulo: 'Valide o trajeto',
-    tabLabel: 'Validação',
-    descricao:
-      'A plataforma combina geolocalização, registro fotográfico e dados de mobilidade urbana para confirmar se o trajeto foi realmente realizado.',
-    icone: '/assets/icons/sign-turn-right-fill.svg',
-    cor: 'green',
-    links: [
-      { label: 'Como validamos', to: '/sobre' },
-      { label: 'Regras de uso', to: '/faq' },
-    ],
-  },
-  {
-    titulo: 'Ganhe Créditos Ecoa',
-    tabLabel: 'Créditos Ecoa',
-    descricao: 'Após a validação, o usuário recebe pontos proporcionais ao trajeto e ao meio de transporte utilizado.',
+    titulo: 'Use seus pontos',
+    tabLabel: 'Conversão',
+    descricao: 'Escolha um perfil de demonstração e defina o percentual da tarifa que deseja cobrir.',
     icone: '/assets/icons/cash-coin.svg',
-    cor: 'teal',
-    links: [
-      { label: 'Consultar saldo', to: '#dashboard' },
-      { label: 'Ver pontuação', to: '#dashboard' },
-    ],
+    cor: 'green',
+    links: [{ label: 'Ver recompensas', to: '/recompensas' }],
   },
   {
-    titulo: 'Troque por benefícios',
-    tabLabel: 'Recompensas',
-    descricao: 'Os Créditos Ecoa podem ser resgatados por passagens, cashback e descontos em parceiros da plataforma.',
+    titulo: 'Consulte seu voucher',
+    tabLabel: 'Histórico',
+    descricao: 'Abra o histórico do perfil para conferir o crédito, os pontos usados e o estado do voucher.',
     icone: '/assets/icons/gift-fill.svg',
-    cor: 'orange',
-    links: [
-      { label: 'Simular troca', to: '#dashboard' },
-      { label: 'Ver benefícios', to: '/recompensas' },
-    ],
-  },
-  {
-    titulo: 'Acompanhe seu impacto',
-    tabLabel: 'Impacto',
-    descricao:
-      'O usuário visualiza métricas como CO₂ não emitido, quantidade de trajetos realizados e evolução no sistema de gamificação.',
-    icone: '/assets/icons/leaf.svg',
-    cor: 'violet',
-    links: [
-      { label: 'Ver impacto', to: '/sobre' },
-      { label: 'Dashboard ambiental', to: '#dashboard' },
-    ],
+    cor: 'teal',
+    links: [{ label: 'Meus vouchers', to: '/vouchers' }],
   },
 ]
 
