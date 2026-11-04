@@ -52,3 +52,11 @@ export function listarVouchers(usuarioId: string, signal: AbortSignal) {
 export function buscarVoucher(codigo: string, signal: AbortSignal) {
   return consultarApi<Voucher>('/vouchers/' + encodeURIComponent(codigo), { signal })
 }
+
+export function utilizarVoucher(codigo: string, usuarioId: string) {
+  return consultarApi<Voucher>('/vouchers/' + encodeURIComponent(codigo) + '/utilizar', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ usuarioId }),
+  })
+}
