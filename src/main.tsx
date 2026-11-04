@@ -11,6 +11,8 @@ import Faq from './pages/Faq/index.tsx'
 import Contato from './pages/Contato/index.tsx'
 import Recompensas from './pages/Recompensas/index.tsx'
 import RecompensaDetalhe from './pages/RecompensaDetalhe/index.tsx'
+import VoucherDetalhe from './pages/VoucherDetalhe/index.tsx'
+import MeusVouchers from './pages/MeusVouchers/index.tsx'
 import NotFound from './pages/NotFound/index.tsx'
 
 const router = createBrowserRouter([
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
       { path: '/sobre', element: <Sobre /> },
       { path: '/recompensas', element: <Recompensas /> },
       { path: '/recompensas/:id', element: <RecompensaDetalhe /> },
+      { path: '/vouchers', element: <MeusVouchers /> },
+      { path: '/vouchers/:codigo', element: <VoucherDetalhe /> },
       { path: '/faq', element: <Faq /> },
       { path: '/contato', element: <Contato /> },
       { path: '*', element: <NotFound /> },

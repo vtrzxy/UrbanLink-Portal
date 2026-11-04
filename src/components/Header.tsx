@@ -6,6 +6,7 @@ const linksNav = [
   { to: '/integrantes', label: 'Quem Somos' },
   { to: '/sobre', label: 'Sobre' },
   { to: '/recompensas', label: 'Recompensas' },
+  { to: '/vouchers', label: 'Meus vouchers' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contato', label: 'Contato' },
 ]
