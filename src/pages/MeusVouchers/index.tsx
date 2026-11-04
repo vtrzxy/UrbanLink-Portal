@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
+import Historico from './Historico'
 import { listarUsuarios } from '../../services/urbanlink'
 import type { Usuario } from '../../types/mobilidade'
 
@@ -45,7 +46,12 @@ export default function MeusVouchers() {
           </select>
         </label>
       )}
-      {usuario && <p className="mt-4">Saldo de {usuario.saldoPontos.toLocaleString('pt-BR')} pontos</p>}
+      {usuario && (
+        <>
+          <p className="mt-4">Saldo de {usuario.saldoPontos.toLocaleString('pt-BR')} pontos</p>
+          <Historico key={usuario.id} usuarioId={usuario.id} />
+        </>
+      )}
     </section>
   )
 }
