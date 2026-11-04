@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-title: "Poppins", ui-sans-serif, sans-serif;
+
+  --color-brand-blue: #1e88e5;
+  --color-brand-blue-dark: #1565c0;
+  --color-brand-green: #4ab24a;
+  --color-brand-green-light: #8cc63f;
+  --color-brand-bg: #f8f9fa;
+  --color-brand-card-soft: #eef8e6;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease forwards;
+}
