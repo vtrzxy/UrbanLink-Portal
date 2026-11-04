@@ -60,3 +60,11 @@ export function utilizarVoucher(codigo: string, usuarioId: string) {
     body: JSON.stringify({ usuarioId }),
   })
 }
+
+export function cancelarVoucher(codigo: string) {
+  return consultarApi<Voucher>('/vouchers/' + encodeURIComponent(codigo), {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ status: 'CANCELADO' }),
+  })
+}
