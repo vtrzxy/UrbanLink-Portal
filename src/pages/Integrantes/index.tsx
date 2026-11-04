@@ -26,9 +26,9 @@ export default function Integrantes() {
         <div className="mx-auto w-full max-w-6xl">
           <h2 className="mb-10 font-title text-2xl font-bold text-slate-800 sm:text-3xl">Conheça o nosso Time!</h2>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {integrantes.map((integrante) => (
-              <div key={integrante.id} className="w-full sm:basis-[calc((100%-3rem)/3)]">
+              <div key={integrante.id}>
                 <TeamCard integrante={integrante} aoSelecionar={setSelecionado} />
               </div>
             ))}
