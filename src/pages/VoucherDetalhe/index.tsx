@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import Button from '../../components/Button'
-import { buscarVoucher, utilizarVoucher } from '../../services/urbanlink'
+import { buscarVoucher, cancelarVoucher, utilizarVoucher } from '../../services/urbanlink'
 import type { Voucher } from '../../types/mobilidade'
 
 function Detalhe({ codigo }: { codigo: string }) {
@@ -21,18 +21,21 @@ function Detalhe({ codigo }: { codigo: string }) {
     return () => controle.abort()
   }, [codigo])
 
-  async function confirmarUso() {
+  async function alterarVoucher(acao: 'utilizar' | 'cancelar') {
     if (!voucher || enviando || voucher.status !== 'ATIVO') return
-    if (!window.confirm('Confirmar a utilização deste voucher?')) return
+    if (!window.confirm('Confirmar que deseja ' + acao + ' este voucher?')) return
 
     setErro('')
     setRetorno('')
     setEnviando(true)
     try {
-      setVoucher(await utilizarVoucher(voucher.codigo, voucher.usuarioId))
-      setRetorno('Voucher utilizado.')
+      const atualizado = acao === 'utilizar'
+        ? await utilizarVoucher(voucher.codigo, voucher.usuarioId)
+        : await cancelarVoucher(voucher.codigo)
+      setVoucher(atualizado)
+      setRetorno(acao === 'utilizar' ? 'Voucher utilizado.' : 'Voucher cancelado.')
     } catch (falha) {
-      setErro(falha instanceof Error ? falha.message : 'Não foi possível utilizar o voucher.')
+      setErro(falha instanceof Error ? falha.message : 'Não foi possível alterar o voucher.')
     } finally {
       setEnviando(false)
     }
@@ -51,9 +54,14 @@ function Detalhe({ codigo }: { codigo: string }) {
           <p>Crédito de {voucher.valorCredito.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
           <p>Pontos usados {voucher.pontosUsados.toLocaleString('pt-BR')}</p>
           {voucher.status === 'ATIVO' && (
-            <Button type="button" className="mt-5 disabled:opacity-60" disabled={enviando} onClick={confirmarUso}>
-              {enviando ? 'Aguarde…' : 'Utilizar voucher'}
-            </Button>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button type="button" className="disabled:opacity-60" disabled={enviando} onClick={() => alterarVoucher('utilizar')}>
+                Utilizar voucher
+              </Button>
+              <Button type="button" className="disabled:opacity-60" disabled={enviando} onClick={() => alterarVoucher('cancelar')}>
+                Cancelar voucher
+              </Button>
+            </div>
           )}
           {retorno && <p className="mt-4 font-bold" role="status">{retorno}</p>}
         </div>
