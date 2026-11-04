@@ -13,3 +13,12 @@ export interface Usuario {
   nome: string
   saldoPontos: number
 }
+
+export interface Voucher {
+  codigo: string
+  usuarioId: string
+  dataGeracao: string
+  valorCredito: number
+  pontosUsados: number
+  status: 'ATIVO' | 'UTILIZADO' | 'EXPIRADO' | 'CANCELADO'
+}
