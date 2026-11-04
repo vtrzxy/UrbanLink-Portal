@@ -4,11 +4,11 @@ Aplicação do Challenge FIAP que propõe incentivar o transporte público com p
 
 ## Identidade visual
 
-![Logo UrbanLink](public/assets/logosUrbanLink/logo_UrbanLink.svg)
+| Marca UrbanLink | Pontos e vouchers |
+| :---: | :---: |
+| <img src="public/assets/logosUrbanLink/logo_UrbanLink.svg" width="120" alt="Logo UrbanLink"> | <img src="public/assets/banners/recompensas-banner.svg" width="180" alt="Ilustração de pontos e vouchers"> |
 
-![Mobilidade e recompensas](public/assets/banners/recompensas-banner.svg)
-
-<img src="public/assets/icons/bus-front-fill.svg" width="32" alt="Transporte público"> <img src="public/assets/icons/leaf.svg" width="32" alt="Sustentabilidade">
+Os ícones de [transporte público](public/assets/icons/bus-front-fill.svg) e [sustentabilidade](public/assets/icons/leaf.svg) complementam a identidade visual da aplicação.
 
 ## Tecnologias
 
@@ -48,10 +48,10 @@ Em **Recompensas**, escolha um transporte, selecione o usuário de demonstraçã
 
 | Item | Endereço |
 | --- | --- |
-| GitHub da Sprint 4 | Inserir URL do repositório público do grupo |
-| Vercel | Inserir URL da aplicação publicada |
-| API Java | https://urbanlink-sboot.onrender.com |
-| Vídeo | Inserir URL do YouTube com a demonstração |
+| GitHub da Sprint 4 | [UrbanLink-Portal no GitHub](https://github.com/vtrzxy/UrbanLink-Portal) |
+| Vercel | [Acessar UrbanLink na Vercel](https://urbanlink-beryl.vercel.app/) |
+| API Java | [API UrbanLink no Render](https://urbanlink-sboot.onrender.com) |
+| Vídeo | [Assistir à apresentação no YouTube](https://youtu.be/MNzid-MXnEQ) |
 
 ## Contato
 
