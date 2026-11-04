@@ -5,22 +5,22 @@ import type { ItemCarousel } from '../../components/TabCarousel'
 
 const pilares: ItemCarousel[] = [
   {
-    titulo: 'Validação real',
+    titulo: 'Validação planejada',
     descricao:
-      'Geolocalização e registro fotográfico confirmam cada trajeto, garantindo recompensas justas para quem realmente usa o transporte público.',
+      'A proposta prevê geolocalização e registro fotográfico para validar trajetos em uma etapa futura.',
     icone: '/assets/icons/geo-alt.svg',
     cor: 'blue',
   },
   {
     titulo: 'Impacto mensurável',
     descricao:
-      'Cada viagem gera dados de CO₂ não emitido, visíveis ao usuário e disponíveis para relatórios ESG de empresas parceiras.',
+      'O detalhe do transporte exibe a estimativa de CO₂ evitado por uso devolvida pela API.',
     icone: '/assets/icons/leaf.svg',
     cor: 'green',
   },
   {
     titulo: 'Gamificação',
-    descricao: 'Desafios semanais, metas e rankings transformam o uso do ônibus em uma experiência interativa e motivadora.',
+    descricao: 'Desafios, metas e rankings são possibilidades futuras. Nesta versão, o incentivo funciona por meio da conversão de pontos em vouchers.',
     icone: '/assets/icons/trophy.svg',
     cor: 'teal',
   },
@@ -66,7 +66,7 @@ const etapasLinhaTempo = [
     titulo: 'Solução e modelo de negócio',
     resumo: 'Desenvolvimento da proposta com validação por geolocalização...',
     texto:
-      'A UrbanLink valida cada trajeto combinando três camadas: foto do interior do veículo, geolocalização em tempo real e cruzamento com os horários reais das linhas via APIs externas. Trajetos validados geram Créditos Ecoa proporcionais à distância percorrida, resgatáveis em passagens, cashback e descontos em parceiros. A receita vem do patrocínio ESG de empresas que financiam as recompensas em troca de métricas concretas de impacto ambiental.',
+      'A Sprint 4 entrega um catálogo integrado à API Java, a conversão de pontos em vouchers de transporte e o histórico por perfil. A proposta de longo prazo inclui validação de trajetos e parcerias para ampliar os benefícios.',
     pontos: [],
   },
   {
