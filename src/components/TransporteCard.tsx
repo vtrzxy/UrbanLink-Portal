@@ -15,6 +15,7 @@ export default function TransporteCard({ item }: { item: Transporte }) {
       <Link
         className="mt-5 self-start font-bold text-brand-blue-dark underline"
         to={'/recompensas/' + encodeURIComponent(item.id)}
+        aria-label={'Ver detalhes de ' + item.nome}
       >
         Ver detalhes →
       </Link>
