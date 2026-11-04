@@ -11,12 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
-.env.*
-!.env.example
-target/
-*.jar
-*.zip
 
 # Editor directories and files
 .vscode/*
@@ -28,5 +22,3 @@ target/
 *.njsproj
 *.sln
 *.sw?
-
-Kit_Gitflow/

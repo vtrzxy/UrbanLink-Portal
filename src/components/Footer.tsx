@@ -12,7 +12,7 @@ const linksNav = [
 export default function Footer() {
   return (
     <footer className="bg-black px-6 py-12 text-white sm:px-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h4 className="mb-3 font-title font-bold">Navegação</h4>
           <ul className="flex flex-wrap gap-4 text-sm sm:gap-6">
@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="flex flex-col gap-2 text-sm">
           <Link to="/">
             <img
-              className="h-12 w-auto"
+              className="max-h-16"
               src="/assets/logosUrbanLink/logo_UrbanLink_branca.svg"
               alt="Logo da UrbanLink"
             />
