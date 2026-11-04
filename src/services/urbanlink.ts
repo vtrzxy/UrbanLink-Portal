@@ -1,3 +1,5 @@
+import type { Transporte } from '../types/mobilidade'
+
 const urlApi = (import.meta.env.VITE_API_URL?.trim() || 'https://urbanlink-sboot.onrender.com').replace(/\/+$/, '')
 
 export async function consultarApi<T>(caminho: string, opcoes?: RequestInit): Promise<T> {
@@ -11,4 +13,8 @@ export async function consultarApi<T>(caminho: string, opcoes?: RequestInit): Pr
   }
 
   return resposta.json()
+}
+
+export function listarTransportes(signal: AbortSignal) {
+  return consultarApi<Transporte[]>('/transportes', { signal })
 }
