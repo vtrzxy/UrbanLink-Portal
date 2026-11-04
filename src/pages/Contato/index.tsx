@@ -115,7 +115,7 @@ export default function Contato() {
                   aria-invalid={Boolean(errors.mensagem)}
                   {...register('mensagem', {
                     required: 'Escreva uma mensagem.',
-                    minLength: { value: 20, message: 'Descreva sua mensagem com pelo menos 20 caracteres.' },
+                    validate: (valor) => valor.trim().length >= 20 || 'Descreva sua mensagem com pelo menos 20 caracteres.',
                   })}
                 />
                 {errors.mensagem && <p className="mt-1 text-sm text-red-600">{errors.mensagem.message}</p>}
