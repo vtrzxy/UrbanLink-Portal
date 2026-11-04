@@ -22,3 +22,9 @@ export interface Voucher {
   pontosUsados: number
   status: 'ATIVO' | 'UTILIZADO' | 'EXPIRADO' | 'CANCELADO'
 }
+
+export interface ConversaoVoucher {
+  usuarioId: string
+  transporteId: string
+  percentualCobertura: number
+}
