@@ -26,6 +26,7 @@ export default function Historico({ usuarioId }: { usuarioId: string }) {
       {vouchers.map((voucher) => (
         <li key={voucher.codigo} className="rounded-2xl bg-white p-5 shadow-sm">
           <p className="break-all font-bold">{voucher.codigo}</p>
+          <p>Status {voucher.status.toLocaleLowerCase('pt-BR')}</p>
           <p>Crédito de {voucher.valorCredito.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
           <p>Pontos usados {voucher.pontosUsados.toLocaleString('pt-BR')}</p>
         </li>
