@@ -38,7 +38,11 @@ export default function Recompensas() {
         descricao="Consulte o catálogo de transportes, escolha uma opção que aceite vouchers e use seus pontos para cobrir parte ou toda a tarifa."
         imagem="/assets/banners/recompensas-banner.svg"
         imagemAlt="Ilustração de voucher, cartão de benefícios e créditos Ecoa"
-      />
+      >
+        <a href="#catalogo" className="mt-6 inline-block rounded-full bg-white px-5 py-3 font-bold text-brand-blue-dark">
+          Ver transportes
+        </a>
+      </PageHeader>
 
       <section id="catalogo" className="mx-auto max-w-6xl px-6 py-12 sm:px-10">
         <h2 className="mb-6 font-title text-2xl font-bold">Catálogo de transportes</h2>
