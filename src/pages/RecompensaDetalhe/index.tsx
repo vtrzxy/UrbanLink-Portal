@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
+import FormularioVoucher from './FormularioVoucher'
 import { buscarTransporte } from '../../services/urbanlink'
 import type { Transporte } from '../../types/mobilidade'
 
@@ -35,11 +36,9 @@ function DetalheTransporte({ id }: { id: string }) {
             <p className="text-slate-600">
               CO₂ evitado por uso {transporte.co2EvitadoPorUso.toLocaleString('pt-BR')} kg
             </p>
-            <p className="mt-6">
-              {transporte.integrado && transporte.aceitaVoucher
-                ? 'Este transporte aceita vouchers.'
-                : 'Este transporte está indisponível para emissão de vouchers.'}
-            </p>
+            {transporte.integrado && transporte.aceitaVoucher
+              ? <FormularioVoucher transporte={transporte} />
+              : <p className="mt-6">Este transporte está indisponível para emissão de vouchers.</p>}
           </>
         )}
       </div>
