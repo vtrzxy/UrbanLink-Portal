@@ -18,3 +18,7 @@ export async function consultarApi<T>(caminho: string, opcoes?: RequestInit): Pr
 export function listarTransportes(signal: AbortSignal) {
   return consultarApi<Transporte[]>('/transportes', { signal })
 }
+
+export function buscarTransporte(id: string, signal: AbortSignal) {
+  return consultarApi<Transporte>('/transportes/' + encodeURIComponent(id), { signal })
+}
