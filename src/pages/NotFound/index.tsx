@@ -2,8 +2,8 @@ import { Link } from 'react-router'
 
 export default function NotFound() {
   return (
-    <main className="grid min-h-[70vh] place-items-center bg-brand-bg px-6 text-center">
-      <section>
+    <section className="grid min-h-[70vh] place-items-center bg-brand-bg px-6 text-center">
+      <div>
         <p className="font-bold text-orange-500">Erro 404</p>
         <h1 className="mt-4 font-title text-4xl font-black text-slate-800">Página não encontrada</h1>
         <Link
@@ -12,7 +12,7 @@ export default function NotFound() {
         >
           Voltar para Home
         </Link>
-      </section>
-    </main>
+      </div>
+    </section>
   )
 }
