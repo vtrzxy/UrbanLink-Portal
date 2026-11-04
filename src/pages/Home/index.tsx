@@ -80,10 +80,14 @@ export default function Home() {
       <PageHeader
         etiqueta="Página Inicial"
         titulo="Seus pontos SoulUp virando mobilidade real"
-        descricao="O UrbanLink conecta engajamento sustentável a benefícios concretos no transporte público. Acumule pontos, troque por vouchers e acompanhe o impacto positivo das suas escolhas na cidade."
+        descricao="Use os pontos disponíveis no perfil de demonstração para emitir vouchers de transporte e acompanhar o histórico."
         imagem="/assets/logosUrbanLink/logo_UrbanLink.svg"
         imagemAlt="Logo grande da UrbanLink"
-      />
+      >
+        <Link to="/recompensas" className="mt-6 inline-block rounded-full bg-white px-5 py-3 font-bold text-brand-blue-dark">
+          Ver transportes e emitir voucher
+        </Link>
+      </PageHeader>
 
       <section className="como-funciona-section flex flex-col lg:min-h-screen justify-center overflow-hidden bg-brand-bg px-6 py-16 sm:px-10 lg:py-24">
         <TabCarousel rotulo="Como funciona?" itens={etapas} />
