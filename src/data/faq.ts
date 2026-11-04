@@ -9,9 +9,9 @@ export const perguntasFaq: PerguntaFaq[] = [
   },
   {
     id: 2,
-    pergunta: 'Como funciona a validação dos trajetos?',
+    pergunta: 'Como emito um voucher?',
     resposta:
-      'O sistema combina geolocalização, registro do trajeto e regras antifraude para confirmar o uso do transporte público antes de liberar os Créditos Ecoa.',
+      'Abra Recompensas, escolha um transporte elegível, selecione um perfil e informe a cobertura da tarifa.',
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ export const perguntasFaq: PerguntaFaq[] = [
     id: 8,
     pergunta: 'Como acompanho minha pontuação?',
     resposta:
-      'Os usuários podem visualizar saldo, histórico de trajetos, vouchers sugeridos e impacto ambiental no painel da solução.',
+      'Abra Meus vouchers e selecione um perfil para ver o saldo e os vouchers emitidos.',
   },
   {
     id: 9,
