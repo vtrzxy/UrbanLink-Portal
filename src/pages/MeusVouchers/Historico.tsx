@@ -5,6 +5,7 @@ import type { Voucher } from '../../types/mobilidade'
 export default function Historico({ usuarioId }: { usuarioId: string }) {
   const [vouchers, setVouchers] = useState<Voucher[] | null>(null)
   const [erro, setErro] = useState('')
+  const [tentativa, setTentativa] = useState(0)
 
   useEffect(() => {
     const controle = new AbortController()
@@ -15,9 +16,19 @@ export default function Historico({ usuarioId }: { usuarioId: string }) {
       })
 
     return () => controle.abort()
-  }, [usuarioId])
+  }, [usuarioId, tentativa])
 
-  if (erro) return <p role="alert" className="mt-6 text-red-800">{erro}</p>
+  if (erro) {
+    return (
+      <div className="mt-6">
+        <p role="alert" className="text-red-800">{erro}</p>
+        <button type="button" className="font-bold underline" onClick={() => {
+          setErro('')
+          setTentativa(tentativa + 1)
+        }}>Tentar novamente</button>
+      </div>
+    )
+  }
   if (!vouchers) return <p role="status" className="mt-6">Carregando vouchers…</p>
   if (vouchers.length === 0) return <p className="mt-6">Nenhum voucher para este usuário.</p>
 
