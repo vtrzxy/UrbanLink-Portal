@@ -20,7 +20,7 @@ function Detalhe({ codigo }: { codigo: string }) {
 
   return (
     <section className="mx-auto max-w-2xl px-6 py-12">
-      <Link to="/vouchers" className="font-bold text-brand-blue-dark underline">Voltar aos vouchers</Link>
+      <Link to={voucher ? '/vouchers?usuario=' + encodeURIComponent(voucher.usuarioId) : '/vouchers'} className="font-bold text-brand-blue-dark underline">Voltar aos vouchers</Link>
       <h1 className="mt-6 break-all font-title text-3xl font-bold">Voucher {codigo}</h1>
       {erro && <p role="alert" className="mt-4 text-red-800">{erro}</p>}
       {!voucher && !erro && <p role="status" className="mt-4">Carregando voucher…</p>}
