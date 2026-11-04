@@ -28,12 +28,12 @@ export default function Contato() {
       <PageHeader
         etiqueta="Contate-nos"
         titulo="Fale com o time UrbanLink"
-        descricao="Tem dúvidas sobre pontos, vouchers de transporte, parcerias ou integração com sistemas de mobilidade urbana? Envie sua mensagem e ajude a construir uma solução mais acessível, segura e sustentável."
+        descricao="Tem dúvidas sobre pontos, vouchers de transporte, parcerias ou integração com sistemas de mobilidade urbana? Use o formulário demonstrativo para conhecer a validação dos campos."
         imagem="/assets/banners/contato-page-banner.png"
         imagemAlt="Ilustração de atendimento digital da UrbanLink com mensagens, celular e mobilidade urbana"
       />
 
-      <main className="contato-section flex flex-col lg:min-h-screen justify-center bg-brand-bg px-6 py-16 sm:px-10 lg:py-24">
+      <section className="contato-section flex flex-col lg:min-h-screen justify-center bg-brand-bg px-6 py-16 sm:px-10 lg:py-24">
         <section className="mx-auto w-full max-w-2xl">
           <div className="mb-8 text-center">
             <h2 className="font-title text-2xl font-bold text-slate-800 sm:text-3xl">Fale Conosco</h2>
@@ -122,7 +122,7 @@ export default function Contato() {
               </div>
 
               <Button type="submit" variante="azul" disabled={isSubmitting}>
-                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+                {isSubmitting ? 'Enviando...' : 'Validar mensagem'}
               </Button>
 
               {enviado && (
@@ -130,13 +130,13 @@ export default function Contato() {
                   role="status"
                   className="rounded-xl border border-brand-green/40 bg-brand-green/10 px-4 py-3 text-sm text-slate-700"
                 >
-                  Mensagem enviada com sucesso! Nosso time entrará em contato em breve.
+                  Validação concluída. O formulário é demonstrativo e não envia mensagens.
                 </div>
               )}
             </form>
           </div>
         </section>
-      </main>
+      </section>
     </>
   )
 }
