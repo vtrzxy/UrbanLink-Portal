@@ -46,6 +46,7 @@ export default function MeusVouchers() {
           </select>
         </label>
       )}
+      {usuarios && usuarioId && !usuario && <p role="status" className="mt-4">Perfil indisponível. Selecione outro usuário.</p>}
       {usuario && (
         <>
           <p className="mt-4">Saldo de {usuario.saldoPontos.toLocaleString('pt-BR')} pontos</p>
