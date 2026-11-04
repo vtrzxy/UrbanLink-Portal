@@ -44,6 +44,19 @@ A configuração padrão é `https://urbanlink-sboot.onrender.com`. Para trocar 
 
 Em **Recompensas**, escolha um transporte, selecione o usuário de demonstração, informe a cobertura da tarifa e emita o voucher. O código e o crédito retornados aparecem na tela. Em **Meus vouchers**, consulte os vouchers do perfil selecionado. O formulário de contato simula a validação.
 
+### Links da entrega
+
+| Item | Endereço |
+| --- | --- |
+| GitHub da Sprint 4 | Inserir URL do repositório público do grupo |
+| Vercel | Inserir URL da aplicação publicada |
+| API Java | https://urbanlink-sboot.onrender.com |
+| Vídeo | Inserir URL do YouTube com a demonstração |
+
+## Contato
+
+A página **Contato** apresenta o formulário demonstrativo. Os perfis de GitHub e LinkedIn abaixo identificam os integrantes e servem para contato com a equipe.
+
 ## Autores
 
 | Foto | Integrante | RM | Turma | Perfis |
