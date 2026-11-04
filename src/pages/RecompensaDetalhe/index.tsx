@@ -32,7 +32,14 @@ function DetalheTransporte({ id }: { id: string }) {
             <p className="mt-4">
               Tarifa {transporte.tarifaBase.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
             </p>
-
+            <p className="text-slate-600">
+              CO₂ evitado por uso {transporte.co2EvitadoPorUso.toLocaleString('pt-BR')} kg
+            </p>
+            <p className="mt-6">
+              {transporte.integrado && transporte.aceitaVoucher
+                ? 'Este transporte aceita vouchers.'
+                : 'Este transporte está indisponível para emissão de vouchers.'}
+            </p>
           </>
         )}
       </div>
