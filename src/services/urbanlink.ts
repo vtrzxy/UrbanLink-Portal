@@ -18,7 +18,11 @@ export async function consultarApi<T>(caminho: string, opcoes?: RequestInit): Pr
     throw new Error(mensagem || 'A API não conseguiu concluir a solicitação.')
   }
 
-  return resposta.json()
+  try {
+    return await resposta.json()
+  } catch {
+    throw new Error('A API devolveu uma resposta inválida. Confira o endereço configurado.')
+  }
 }
 
 export function listarTransportes(signal: AbortSignal) {
