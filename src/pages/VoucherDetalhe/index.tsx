@@ -26,6 +26,7 @@ function Detalhe({ codigo }: { codigo: string }) {
       {!voucher && !erro && <p role="status" className="mt-4">Carregando voucher…</p>}
       {voucher && (
         <div className="mt-6 rounded-2xl bg-white p-6 shadow-sm">
+          <p>Emissão {new Date(voucher.dataGeracao).toLocaleString('pt-BR')}</p>
           <p>Status {voucher.status.toLocaleLowerCase('pt-BR')}</p>
           <p>Crédito de {voucher.valorCredito.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
           <p>Pontos usados {voucher.pontosUsados.toLocaleString('pt-BR')}</p>
