@@ -3,7 +3,13 @@ import type { ConversaoVoucher, Voucher, Usuario, Transporte } from '../types/mo
 const urlApi = (import.meta.env.VITE_API_URL?.trim() || 'https://urbanlink-sboot.onrender.com').replace(/\/+$/, '')
 
 export async function consultarApi<T>(caminho: string, opcoes?: RequestInit): Promise<T> {
-  const resposta = await fetch(urlApi + caminho, opcoes)
+  let resposta: Response
+
+  try {
+    resposta = await fetch(urlApi + caminho, opcoes)
+  } catch {
+    throw new Error('Não foi possível conectar à API. Verifique a conexão e tente novamente.')
+  }
 
   if (!resposta.ok) {
     const mensagem = resposta.headers.get('content-type')?.includes('text/plain')
