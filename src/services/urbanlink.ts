@@ -48,3 +48,7 @@ export function emitirVoucher(conversao: ConversaoVoucher) {
 export function listarVouchers(usuarioId: string, signal: AbortSignal) {
   return consultarApi<Voucher[]>('/vouchers/usuario/' + encodeURIComponent(usuarioId), { signal })
 }
+
+export function buscarVoucher(codigo: string, signal: AbortSignal) {
+  return consultarApi<Voucher>('/vouchers/' + encodeURIComponent(codigo), { signal })
+}
