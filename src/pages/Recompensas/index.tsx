@@ -9,6 +9,7 @@ export default function Recompensas() {
   const [modalidade, setModalidade] = useState('')
   const [erro, setErro] = useState('')
   const [carregando, setCarregando] = useState(true)
+  const [tentativa, setTentativa] = useState(0)
 
   useEffect(() => {
     document.title = 'UrbanLink - Recompensas'
@@ -24,7 +25,7 @@ export default function Recompensas() {
       })
 
     return () => controle.abort()
-  }, [])
+  }, [tentativa])
 
   const modalidades = [...new Set(transportes.map((item) => item.modalidade))]
   const filtrados = transportes.filter((item) => !modalidade || item.modalidade === modalidade)
@@ -42,7 +43,23 @@ export default function Recompensas() {
       <section id="catalogo" className="mx-auto max-w-6xl px-6 py-12 sm:px-10">
         <h2 className="mb-6 font-title text-2xl font-bold">Catálogo de transportes</h2>
         {carregando && <p role="status">Carregando transportes…</p>}
-        {erro && <p role="alert" className="text-red-800">{erro}</p>}
+        {erro && (
+          <div role="alert" className="rounded-xl bg-red-50 p-4 text-red-800">
+            <p>{erro}</p>
+            <button
+              type="button"
+              className="mt-2 font-bold underline"
+              onClick={() => {
+                setErro('')
+                setModalidade('')
+                setCarregando(true)
+                setTentativa(tentativa + 1)
+              }}
+            >
+              Tentar novamente
+            </button>
+          </div>
+        )}
 
         {!carregando && !erro && (
           <>
