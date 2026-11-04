@@ -34,3 +34,7 @@ export function emitirVoucher(conversao: ConversaoVoucher) {
     body: JSON.stringify(conversao),
   })
 }
+
+export function listarVouchers(usuarioId: string, signal: AbortSignal) {
+  return consultarApi<Voucher[]>('/vouchers/usuario/' + encodeURIComponent(usuarioId), { signal })
+}
