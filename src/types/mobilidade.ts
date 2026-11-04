@@ -7,3 +7,9 @@ export interface Transporte {
   integrado: boolean
   aceitaVoucher?: boolean
 }
+
+export interface Usuario {
+  id: string
+  nome: string
+  saldoPontos: number
+}
