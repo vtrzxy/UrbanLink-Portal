@@ -6,6 +6,7 @@ import type { Transporte } from '../../types/mobilidade'
 
 export default function Recompensas() {
   const [transportes, setTransportes] = useState<Transporte[]>([])
+  const [modalidade, setModalidade] = useState('')
   const [erro, setErro] = useState('')
   const [carregando, setCarregando] = useState(true)
 
@@ -25,6 +26,9 @@ export default function Recompensas() {
     return () => controle.abort()
   }, [])
 
+  const modalidades = [...new Set(transportes.map((item) => item.modalidade))]
+  const filtrados = transportes.filter((item) => !modalidade || item.modalidade === modalidade)
+
   return (
     <>
       <PageHeader
@@ -42,9 +46,23 @@ export default function Recompensas() {
 
         {!carregando && !erro && (
           <>
-            {transportes.length === 0 && <p>Nenhum transporte disponível.</p>}
+            {modalidades.length > 0 && (
+              <label className="mb-6 flex flex-wrap items-center gap-3 font-semibold">
+                Modalidade
+                <select
+                  className="rounded-lg border border-slate-400 bg-white px-3 py-2"
+                  value={modalidade}
+                  onChange={(event) => setModalidade(event.target.value)}
+                >
+                  <option value="">Todas</option>
+                  {modalidades.map((item) => <option key={item} value={item}>{item}</option>)}
+                </select>
+              </label>
+            )}
+
+            {filtrados.length === 0 && <p>Nenhum transporte disponível.</p>}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {transportes.map((item) => (
+              {filtrados.map((item) => (
                 <TransporteCard key={item.id} item={item} />
               ))}
             </div>
